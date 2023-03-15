@@ -1,7 +1,11 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Task = ({ taskObj, onComplete }) => {
+  
   return (
+    <>
     <div className="task">
       <h3>{taskObj.title}</h3>
       <p>{taskObj.description}</p>
@@ -12,6 +16,8 @@ const Task = ({ taskObj, onComplete }) => {
       </div>
       {onComplete && <button onClick={() => onComplete(taskObj.id)}>Tamamlandı</button>}
     </div>
+    <ToastContainer/>
+    </>
   );
 };
 
